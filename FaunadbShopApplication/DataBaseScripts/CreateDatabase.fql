@@ -1,0 +1,60 @@
+﻿CreateCollection({name: "Users"})
+
+Create(
+  Collection("Users"),
+  {
+    data: {
+      firstName: "John",
+      lastName: "Doe",
+      birthday: Date("2000-01-01"),
+      phone: "15417543013",
+      address: "New street 1/2",
+      password:"",
+      user_type: "CUSTOMER"
+    }
+  }
+)
+
+CreateIndex({
+  name: "all_users",
+  source: Collection("Users")
+})
+
+CreateIndex({
+  name: "User_by_phone",
+  source: Collection("Users"),
+  terms: [
+    { field: ["data", "phone"]}
+  ],
+  unique: true
+})
+
+CreateCollection({name: "Categories"})
+CreateIndex({
+  name: "all_categories",
+  source: Collection("Categories")
+})
+
+CreateCollection({name: "Products"})
+
+CreateIndex({
+  name: "all_recent_products",
+  source: Collection("Products"),
+  values: [{ field: ["data","datetime"], reverse: true }, { field: ["ref"] }]
+})
+
+CreateIndex({
+  name: "products_sorted_by_name_price",
+  source: Collection("Products"),
+  values: [
+    { field: ["data", "name"] },
+    { field: ["data", "price"] },
+    { field: ["ref"] }
+  ]
+})
+
+CreateIndex({
+  name: "products_by_category",
+  source: Collection("Products"),
+  terms: [{ field: ["data", "category"] }]
+})

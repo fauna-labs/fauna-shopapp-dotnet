@@ -5,3 +5,9 @@
 /obj
 /bin/Debug/netcoreapp3.1
 /.vs/FaunadbShopApplication
+/FaunadbShopApplication/.vs/FaunadbShopApplication/v16
+/FaunadbShopApplication/bin/Debug
+/FaunadbShopApplication/obj
+/FaunadbShopApplication.Test/bin/Debug
+/FaunadbShopApplication.Test/obj/Debug/net5.0/ref/FaunadbShopApplication.Test.dll
+/FaunadbShopApplication.Test/obj
