@@ -1,12 +1,9 @@
 ﻿using FaunadbShopApplication.Dto;
 using Microsoft.Extensions.Configuration;
 using System;
-using FaunaDB.Client;
 using FaunaDB.Types;
 using System.Threading.Tasks;
 using static FaunaDB.Query.Language;
-
-using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics.CodeAnalysis;
 

@@ -3,8 +3,6 @@ using FaunaDB.Types;
 using static FaunaDB.Query.Language;
 using System;
 using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace FaunadbShopApplication.Dto
 {
