@@ -18,7 +18,7 @@ namespace FaunadbShopApplication.Repository
 
         protected  FaunaClient GetClient()
         {
-            var adminKey = Configuration["FaunaSettings:ADMIN_KEY"];
+            var adminKey = Environment.GetEnvironmentVariable("ADMIN_KEY");
             var endPoint = Configuration["FaunaSettings:HOST"];
             return FaunaDbClient.GetClient(adminKey, endPoint);
         }

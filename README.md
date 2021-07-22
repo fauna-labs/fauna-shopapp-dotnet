@@ -22,9 +22,13 @@ https://github.com/fauna/fauna-shell
 * Open file DataBaseScripts\CreateDatabase.fql and execute each script in Fauna shell in the dashboard or fauna-shell app.
 
 ### Running the application locally
-1. Open MS Visual Studio and press F5 button
-2. Open command line in `FaunadbShopApplication` and run command:
+1. You'll need to export environment variable before starting the app:
 ```
+export ADMIN_KEY=your_admin_secret_key
+```
+2. Open command line in `FaunadbShopApplication` and run the `dotnet run` command:
+```
+cd FaunadbShopApplication
 dotnet run
 ```
 
