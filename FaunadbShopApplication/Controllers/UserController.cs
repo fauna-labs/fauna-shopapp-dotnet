@@ -17,24 +17,15 @@ namespace FaunadbShopApplication.Controllers
         }
 
         /// <summary>
-        /// Authentificate existing user
-        /// </summary>
-        /// <param name="user"></param>
-        [HttpPost("authenticate")]
-        public async Task<AuthentificatedUser> Authentificate(LoginUser user)
-        {
-            return await _userService.Authenticate(user);
-        }
-
-        /// <summary>
         /// Create new user
         /// </summary>
         /// <param name="user"></param>
+        /// <param name="password"></param>
         [HttpPut("adduser")]
         [AllowAnonymous]
-        public async Task<bool> AddUser(User user)
+        public async Task<bool> AddUser(User user, string password)
         {
-            return await _userService.AddUser(user);
+            return await _userService.AddUser(user, password);
         }
     }
 }

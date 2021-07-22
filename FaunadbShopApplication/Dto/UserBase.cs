@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FaunadbShopApplication.Dto
 {
-    public class UserBase
+    public class User
     {
         [Required]
         [FaunaField("firstName")]

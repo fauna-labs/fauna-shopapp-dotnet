@@ -35,12 +35,11 @@ namespace FaunadbShopApplication.Test
                 FirstName = "Ron",
                 LastName = "Howard",
                 BirthDate = new DateTime(1980, 1, 10),
-                Password = "passw1",
                 PhoneNumber = "15417543014",
                 Address = "Some street 2",
                 UserType = UserRoles.CUSTOMER
             };
-            var result = await userRepository.AddUser(user);
+            var result = await userRepository.AddUser(user, "test_password");
             Assert.IsTrue(result, "New user hasn't been created");
         }
 

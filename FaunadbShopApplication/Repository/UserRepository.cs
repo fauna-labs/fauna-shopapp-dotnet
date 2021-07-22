@@ -21,7 +21,7 @@ namespace FaunadbShopApplication.Repository
         { 
         }
 
-        public async Task<bool> AddUser([NotNull]User user)
+        public async Task<bool> AddUser([NotNull]User user, [NotNull]string password)
         {
             var client = GetClient();
             var searchResult =  await GetUserByPhone(user.PhoneNumber);
@@ -34,8 +34,13 @@ namespace FaunadbShopApplication.Repository
             await client.Query(
                        Create(
                                Collection(COLLECTION_NAME),
-                               Obj("data", Encoder.Encode(user))
-                           )
+                               Obj(
+                                   "data", Encoder.Encode(user),
+                                   "credentials", Obj(
+                                       "password", password
+                                   )
+                               )
+                       )
                    );
             return true;
         }

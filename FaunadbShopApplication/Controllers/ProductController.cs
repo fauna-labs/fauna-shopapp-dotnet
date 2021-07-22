@@ -1,13 +1,12 @@
 ﻿using FaunadbShopApplication.Dto;
-using FaunadbShopApplication.Helpers;
 using FaunadbShopApplication.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FaunadbShopApplication.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ProductController : Controller
@@ -23,6 +22,7 @@ namespace FaunadbShopApplication.Controllers
         /// </summary>
         //[Authorize]
         [HttpGet("GetAllCategories")]
+        [AllowAnonymous]
         public async Task<IEnumerable<Category>> GetAllCategories()
         {
             return await _productService.GetCategories();
@@ -33,6 +33,7 @@ namespace FaunadbShopApplication.Controllers
         /// </summary>
         //[Authorize]
         [HttpGet("GetRecentProducts")]
+        [AllowAnonymous]
         public async Task<IEnumerable<Product>> GetRecentProducts()
         {
             return await _productService.GetRecentProducts();
@@ -43,6 +44,7 @@ namespace FaunadbShopApplication.Controllers
         /// </summary>
         //[Authorize]
         [HttpGet("GetProductsSortedByName")]
+        [AllowAnonymous]
         public async Task<IEnumerable<Product>> GetProductsSortedByName()
         {
             return await _productService.GetProductsSortedByName();
@@ -54,6 +56,7 @@ namespace FaunadbShopApplication.Controllers
         /// <param name="categoryId"></param>
         //[Authorize]
         [HttpGet("GetProductsByCategory")]
+        [AllowAnonymous]
         public async Task<IEnumerable<Product>> GetProductsByCategory(string categoryId)
         {
             return await _productService.GetProductsByCategory(categoryId);
@@ -64,6 +67,7 @@ namespace FaunadbShopApplication.Controllers
         /// </summary>
         /// <param name="product"></param>
         [HttpPut("AddProduct")]
+        [AllowAnonymous]
         public async Task<bool> AddProduct(ProductDto product)
         {
             return await _productService.AddProduct(product);
@@ -74,6 +78,7 @@ namespace FaunadbShopApplication.Controllers
         /// </summary>
         /// <param name="categoryName"></param>
         [HttpPut("AddNewCategory")]
+        [AllowAnonymous]
         public async Task<bool> AddNewCategory(string categoryName)
         {
             return await _productService.AddCategory(categoryName);

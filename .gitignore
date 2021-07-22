@@ -11,3 +11,6 @@
 /FaunadbShopApplication.Test/bin/Debug
 /FaunadbShopApplication.Test/obj/Debug/net5.0/ref/FaunadbShopApplication.Test.dll
 /FaunadbShopApplication.Test/obj
+
+.idea/
+*.iml

@@ -9,7 +9,6 @@ Create(
       birthday: Date("2000-01-01"),
       phone: "15417543013",
       address: "New street 1/2",
-      password:"",
       user_type: "CUSTOMER"
     }
   }
@@ -30,6 +29,7 @@ CreateIndex({
 })
 
 CreateCollection({name: "Categories"})
+
 CreateIndex({
   name: "all_categories",
   source: Collection("Categories")

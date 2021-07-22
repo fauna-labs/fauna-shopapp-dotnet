@@ -8,8 +8,7 @@ namespace FaunadbShopApplication.Service
 {
     public interface IUserService
     {
-        Task<AuthentificatedUser> Authenticate(LoginUser user);
-        Task<bool> AddUser(User user);
+        Task<bool> AddUser(User user, string password);
         Task<User> GetUserById(string id);
     }
 }
